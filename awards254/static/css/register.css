@@ -1,0 +1,29 @@
+.smalltxt {
+  font-size: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-text {
+  display: none;
+}
+
+.tuzo {
+  width: 22em;
+  margin-top: 10%;
+}
+
+.vl {
+  border-left: 6px solid rgb(88, 86, 86);
+  height: 50px;
+  margin-top: -70px;
+  margin-bottom: 30px;
+}
+
+.imgtxt {
+  margin-left: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
