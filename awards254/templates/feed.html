@@ -1,0 +1,43 @@
+{% extends 'mbase.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/feed.css' %}">
+
+<div class="test-image">
+    <div class="centered">
+        <p id="txt"><b> Awarding the best locally made websites </b></p>
+    </div>
+    <div class="image-overlay">
+    </div>
+</div>
+
+<div class="container">
+  
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="featured"> <b>Featured Sites</b> </h4>
+            {% for p in projects %}
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{p.image_path.url}}" alt="{{p.title}}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{p.title}}<i class="material-icons right">more_vert</i></span>
+                    <p><a href="{% url 'review' p.id %}">Review site</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{p.title}}<i class="material-icons right">close</i></span>
+                    <p>{{p.description}}</p>
+                    <p><a href="{{p.website_link}}" target="_blank">View Site</a></p>
+                    <p class="owner"> BY <a href="{% url 'profile' p.owner.id  %}"> <b>{{p.owner}}</b></a></p>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
