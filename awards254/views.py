@@ -65,3 +65,11 @@ def review(request,id):
 
     print(reviews)
     return render(request, 'review.html',{'projo':projo, 'auser': auser, 'reviewform':reviewform, 'reviews':reviews})
+
+def search_results(request):
+    if 'project' in request.GET and request.GET['project']:
+        title = request.GET.get("project")
+        searched_projects = Project.search_by_title(title)
+        message = f'{title}'
+
+        return render(request, 'search.html',{'message':message, 'projects':searched_projects})
