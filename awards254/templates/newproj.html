@@ -1,0 +1,25 @@
+{% extends 'mbase.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/newproj.css' %}">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 up_form">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group projform">
+                    <legend class="border-bottom mb-4">
+                        <p id="title">Upload an Project</p>
+                    </legend>
+                    {{ projform|crispy }}
+                    <div class="form-group projform">
+                        <button class="btn btn-outline-success" type="submit">Upload</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
