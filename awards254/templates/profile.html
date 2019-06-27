@@ -1,0 +1,61 @@
+{% extends 'mbase.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10">
+            <h1 class="p_title"> Profile </h1>
+            <div class="main_prof">
+                <div class="image">
+                    {% for profile in profiles %}
+                    <img src='{{profile.profile_image.url}}' alt="{{profile.user.username}}'s profile pic">
+
+                </div>
+                <h4><b>{{user.username}}</b></h4>
+                <p class="text-secondary">{{user.email}}</p>
+                <p class="text-dark bio">{{profile.bio}}</p>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3">
+            <h1 class="p_title"> Projects </h1>
+            {% if user.id == request.user.id %}
+            <a href="{% url 'post' %}"><button class="btn btn-outline-success">Post a Project</button></a>
+            {% endif %}
+        </div>
+
+        <div class="col-md-9">
+            {% for project in projects %}
+            <div class="col s12 m5">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{project.image_path.url}}">
+                        <span class="card-title">{{project.title}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{project.description}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{project.website_link}}">View official site</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
