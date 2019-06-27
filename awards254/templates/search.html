@@ -1,0 +1,39 @@
+{% extends 'mbase.html' %}
+{% load bootstrap4 %}
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+
+<div class="container">
+    <div class="row">
+        {% if not projects %}
+        <img src='/static/images/sadface.png' class="sad" alt="picture">
+        <p class="stmnt"> Project <i>{{message}}</i><br> not<br> available</p>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        {% if projects %}
+        {% for p in projects %}
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{p.image_path.url}}">
+                </div>
+                <div class="card-content">
+                    <p>{{p.title}}: {{p.description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'review' p.id %}">Review site</a>
+                </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+        </div>
+
+    </div>
+    {% endblock %}
