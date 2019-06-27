@@ -28,4 +28,12 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s Profile"
-        
+
+class Review(models.Model):
+    username= models.ForeignKey(User)
+    design= models.CharField(max_length=2)
+    usability= models.CharField(max_length=2)
+    content= models.CharField(max_length=2)
+    review = models.TextField(max_length=100,null=True)
+    project = models.ForeignKey(Project)
+    
