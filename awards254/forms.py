@@ -17,13 +17,13 @@ class ProjectPostForm(forms.ModelForm):
     model = Project
     fields = ['title','description','image_path','website_link']
 
-# class ReviewForm(forms.ModelForm):
-#   class Meta:
-#     models = Review
-#     exclude = ['username','project']
-#     widgets = {
-#       'design': forms.Select(choices=INTEGER_CHOICES),
-#       'usability': forms.Select(choices=INTEGER_CHOICES),
-#       'content': forms.Select(choices=INTEGER_CHOICES),
-#       'review': forms.TextInput(attrs={'placeholder':'Add a review'})
-#     }
+class ReviewForm(forms.ModelForm):
+  class Meta:
+    models = Review
+    exclude = ['username','project']
+    widgets = {
+      'design': forms.Select(choices=INTEGER_CHOICES),
+      'usability': forms.Select(choices=INTEGER_CHOICES),
+      'content': forms.Select(choices=INTEGER_CHOICES),
+      'review': forms.TextInput(attrs={'placeholder':'Add a review'})
+    }
