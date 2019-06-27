@@ -1,0 +1,28 @@
+
+  nav{
+    background-color: black !important;;
+  }
+  
+  .navbar .logoname {
+    width: 130px;
+    margin-bottom: -1px;
+    font-family: 'Grand Hotel', cursive;
+    font-size: 20px;
+  }
+ 
+ .search-section{
+     margin-bottom: 70px;
+ }
+
+ .tuzo{
+   width:90px;
+   height:60px;
+   margin-top: -70px;
+ }
+ .icons-section{
+   font-size: 17px;
+   margin-bottom: 50px;
+ }
+ .icons-section a:hover{
+  color: black;
+}
