@@ -12,10 +12,10 @@ class UserRegistrationForm(UserCreationForm):
     model = User
     fields = ['username','email','password1','password2']
 
-# class ProjectPostForm(forms.ModelForm):
-#   class Meta:
-#     model = Project
-#     fields = ['title','description','image_path','website_link']
+class ProjectPostForm(forms.ModelForm):
+  class Meta:
+    model = Project
+    fields = ['title','description','image_path','website_link']
 
 # class ReviewForm(forms.ModelForm):
 #   class Meta:
