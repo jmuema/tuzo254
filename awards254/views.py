@@ -44,3 +44,24 @@ def post(request):
     else:
         projform = ProjectPostForm()
     return render(request, 'newproj.html', {'projform': projform})
+
+def review(request,id):
+    projo = Project.objects.get(id=id)
+    auser = request.user
+    reviews = Review.objects.filter(project=projo)
+
+    if request.method == 'POST':
+        reviewform = ReviewForm(request.POST)
+        if reviewform.is_valid():
+            project_id =int(request.POST.get('review_id'))
+            project = Project.objects.get(id = project_id)
+            review = reviewform.save(commit=False)
+            review.username = request.user
+            review.project = project
+            review.save()
+        return redirect ('review', projo.id)
+    else:
+        reviewform = ReviewForm()
+
+    print(reviews)
+    return render(request, 'review.html',{'projo':projo, 'auser': auser, 'reviewform':reviewform, 'reviews':reviews})
