@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -33,6 +34,3 @@ class Review(models.Model):
     content= models.CharField(max_length=2)
     review = models.TextField(max_length=100,null=True)
     project = models.ForeignKey(Project)
-    
-
-
