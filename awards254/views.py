@@ -31,3 +31,16 @@ def profile(request,id):
     profiles = Profile.objects.all()
     projects = Project.objects.all().filter(owner_id=user.id)
     return render(request, 'profile.html',{'profiles':profiles, 'user':user, 'projects':projects})
+
+def post(request):
+    user = request.user
+    if request.method == 'POST':
+        projform = ProjectPostForm(request.POST, request.FILES)
+        if projform.is_valid():
+            proj = projform.save(commit=False)
+            proj.owner = user
+            proj.save()
+        return redirect('profile', user.id)
+    else:
+        projform = ProjectPostForm()
+    return render(request, 'newproj.html', {'projform': projform})
