@@ -26,3 +26,8 @@ def feed(request):
     print (projects)
 
     return render(request, 'feed.html',{"projects": projects})
+def profile(request,id):
+    user = User.objects.get(id=id)
+    profiles = Profile.objects.all()
+    projects = Project.objects.all().filter(owner_id=user.id)
+    return render(request, 'profile.html',{'profiles':profiles, 'user':user, 'projects':projects})
