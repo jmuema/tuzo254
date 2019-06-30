@@ -2,7 +2,7 @@
 This is a django application that awards Kenyan websites according to different criteria after people post them
 
 ## Author Information
-Written by *JOseph Muema*. Mastering django 
+Written by *Joseph Muema*. Mastering django 
 
 ## Installation
 
@@ -28,7 +28,7 @@ Written by *JOseph Muema*. Mastering django
 
 To reach me, email me at: > jmuema95@gmail.com
 
-###License
+### License
 Copyright (c) **Joseph Muema**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
