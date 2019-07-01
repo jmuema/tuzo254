@@ -8,7 +8,7 @@ Written by *Joseph Muema*. Mastering django
 
 1. Clone the repository
 2. Create a virtual environment and activate it
-3. Install python version 3.6.7
+3. Install python version 3.6.8
 4. Pip install the requirements
 5. Create a database called pongezi
 6. Carry out migrations
